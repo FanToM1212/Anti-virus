@@ -31,11 +31,11 @@ int main(int argc, char* argv[])
     char names[20][MAX] = { 0 };
     int n = 0;
     strcat(path, argv[1]);
-    DIR* d = 0;
+    DIR* directory = 0;
     struct dirent* dir = 0;
 
     // Prompt user for scan type
-    d = opendir(argv[1]);
+    directory = opendir(argv[1]);
     int bool = 0;
     printf("wellcome to my anti-virus ;) hope you like it\n");
     printf("\nFolder to scan: %s\n", argv[1]);
@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
     fprintf(log, "Virus signature:\n%s\n", argv[2]);
 
     // Check if directory was opened successfully
-    if (d == NULL)
+    if (directory == NULL)
     {
         fputs("Error opening file\nhow to run - file.exe Dirctory path virus path (for fast scan do 1 other for slow)\n", log);
         printf("Error opening file\n");
@@ -79,11 +79,11 @@ int main(int argc, char* argv[])
     printf("\nscanning:\n");
 
     // Read files in directory
-    while ((dir = readdir(d)) != NULL)
+    while ((dir = readdir(directory)) != NULL)
     {
-        if (strcmp(dir->d_name, ".") && strcmp(dir->d_name, ".."))
+        if (strcmp(dir->directory_name, ".") && strcmp(dir->directory_name, ".."))
         {
-            strcpy(names[n], dir->d_name);
+            strcpy(names[n], dir->directory_name);
             n++;
         }
     }
@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
 
     // Close log file and directory
     fclose(log);
-    closedir(d);
+    closedir(directory);
 
     return 0;
 }
