@@ -5,8 +5,7 @@
 
 #pragma warning(disable : 4996)
 #define MAX 50
-#define FIRST_PART 4
-#define LAST_PART 5
+#define FIRST_BYTES 4
 #define Infected 0
 #define SAFE 1
 
@@ -145,7 +144,7 @@ int fastVirusCheck(char* path, char* virusPath) {
             j++;
             if (j >= virusSize){
                 printf("The virus was found in the first 20%% of the file\n");
-                return FIRST_PART;
+                return FIRST_BYTES;
             }
         }
         else{
