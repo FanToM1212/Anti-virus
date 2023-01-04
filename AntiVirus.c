@@ -84,10 +84,10 @@ int main(int argc, char* argv[]){
     }
 
     // Check each file for virus signature
-    for (int i = 0; i < n; i++) {
+    for (int file = 0; file < n; file++) {
         strcpy(path, argv[1]);
         strcat(path, "/");
-        strcat(path, names[i]);
+        strcat(path, names[file]);
 
         if (choose == '0') {
             bool = virusCheck(path, argv[2]);
@@ -97,12 +97,12 @@ int main(int argc, char* argv[]){
         }
 
         if (bool == Infected) {
-            fprintf(log, "\n%s is INFECTED\n", names[i]);
-            printf("\n%s is INFECTED\n", names[i]);
+            fprintf(log, "\n%s is INFECTED\n", names[file]);
+            printf("\n%s is INFECTED\n", names[file]);
         }
         else {
-            fprintf(log, "\n%s is SAFE\n", names[i]);
-            printf("\n%s is SAFE\n", names[i]);
+            fprintf(log, "\n%s is SAFE\n", names[file]);
+            printf("\n%s is SAFE\n", names[file]);
         }
     }
 
