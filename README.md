@@ -1,4 +1,4 @@
-### anti-virus
+### Anti-virus
 
 This code is a program that scans a directory for viruses.
 It takes two pieces of information from the user: the location of the directory to be scanned and the location of a file containing the "signature" of a known virus. 
